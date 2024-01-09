@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+        <meta name="theme-color" content="#333">
+
+        <title>ポケモン グリッド</title>
+
+        <link rel="icon" href="./res/icon.png?v=231218">
+        <link rel="apple-touch-icon" href="./res/icon.png?v=231218">
+        <link rel="stylesheet" href="./src/main.css?v=231218">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <main>
+            <div class="container" id="app">
+                <transition name="fade">
+                    <div v-if="loading_visible" key="loading" class="loading">
+                        <div class="container">LOADING...</div>
+                    </div>
+                </transition>
+
+                <transition name="fade">
+                    <button v-if="reload_visible" @click="reload" class="reload"><i class="bi bi-arrow-clockwise"></i></button>
+                </transition>
+
+                <transition name="fade">
+                    <div v-if="cards_visible" key="cards" class="cards">
+                        <div class="container">
+                            <div v-for="card in cards" :key="card.id" class="card">
+                                <div :style="{ background: `radial-gradient(circle at 50% 0%, ${card.typeColor} 36%, #ffffff 36%)` }" class="container">
+                                    <div class="badges">
+                                        <div class="badge"><span>No.</span>{{ card.num }}</div>
+                                        <div class="badge"><span>HP</span>{{ card.hp }}</div>
+                                    </div>
+                                    <img :src="card.img_src">
+                                    <h2 class="name">{{ card.name }}</h2>
+                                    <div class="types">
+                                        <span v-for="type in card.types" :style="{ 'background-color': type.color }">{{ type.name.toUpperCase() }}</span>
+                                    </div>
+                                    <div class="stats">
+                                        <div>
+                                            <h3>{{ card.attack }}</h3>
+                                            <p>Attack</p>
+                                        </div>
+                                        <div>
+                                            <h3>{{ card.defense }}</h3>
+                                            <p>Defense</p>
+                                        </div>
+                                        <div>
+                                            <h3>{{ card.speed }}</h3>
+                                            <p>Speed</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </transition>
+            </div>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>© 2023 <a href="//github.com/kanaaa224/" target="_blank">kanaaa224</a>.</p>
+            </div>
+        </footer>
+
+        <script src="./src/main.js?v=231218"></script>
+    </body>
+</html>

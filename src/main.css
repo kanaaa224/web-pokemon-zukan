@@ -1,0 +1,258 @@
+@charset "UTF-8";
+
+/* ---------------------------------------------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* ---------------------------------------------------------------------------------------------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    touch-action: manipulation;
+}
+
+body {
+    margin: 0;
+
+    overflow: hidden auto;
+
+    font-family: sans-serif;
+
+    background-color: #333;
+
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+
+main {
+    .container {
+        position: absolute;
+
+        min-width: 100%;
+        min-height: 100%;
+
+        background-color: #eff3ff;
+        color: #333;
+
+        p {
+            margin: 0;
+
+            font-size: 1rem;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        button {
+            all: unset;
+        }
+
+        .cards {
+            .container {
+                all: unset;
+
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+
+                .card {
+                    .container {
+                        all: unset;
+
+                        display: inline-block;
+
+                        width: 18rem;
+                        height: 25rem;
+
+                        margin: 2rem;
+
+                        color: #000;
+
+                        font-family: 'Poppins', sans-serif;
+
+                        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+
+                        border-radius: 1rem;
+
+                        img {
+                            width: 7.5rem;
+                            height: 7.5rem;
+                            max-height: 7.5rem;
+
+                            margin: 2rem auto 1rem auto;
+
+                            display: block;
+
+                            pointer-events: none;
+                        }
+
+                        .badges {
+                            margin: 1rem;
+
+                            display: flex;
+                            justify-content: space-between;
+
+                            .badge {
+                                width: 5rem;
+
+                                padding: 0.5rem 0;
+
+                                background-color: #fff;
+
+                                border-radius: 2rem;
+
+                                font-weight: 400;
+
+                                text-align: center;
+
+                                span {
+                                    font-size: 0.75rem;
+                                    font-weight: 600;
+
+                                    letter-spacing: 0;
+                                }
+                            }
+                        }
+
+                        .name {
+                            margin: 0;
+
+                            font-weight: 600;
+
+                            text-align: center;
+                        }
+
+                        .types {
+                            display: flex;
+                            justify-content: space-evenly;
+                            margin: 1rem 0;
+
+                            span {
+                                padding: 0.25rem 1.25rem;
+
+                                color: #fff;
+
+                                border-radius: 1rem;
+
+                                font-size: 0.75rem;
+                                font-weight: 600;
+
+                                letter-spacing: 0;
+                            }
+                        }
+
+                        .stats {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-evenly;
+
+                            text-align: center;
+
+                            h3 {
+                                margin: 0;
+                            }
+
+                            p {
+                                margin: 0;
+                                color: #404060;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .loading {
+            .container {
+                all: unset;
+
+                position: fixed;
+                bottom: 0;
+                left: 0;
+
+                margin: 1rem;
+
+                color: #00000080;
+
+                font-size: 0.75rem;
+                font-weight: bold;
+
+                letter-spacing: 0.075rem;
+            }
+        }
+
+        .reload {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+
+            width: 3.5rem;
+            height: 3.5rem;
+
+            margin: 1rem;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+
+            background-color: #444;
+            color: #fff;
+
+            box-shadow: 0 0 2rem 0 #00000080;
+
+            font-size: 1.25rem;
+
+            cursor: pointer;
+        }
+
+        .fade-enter-active, .fade-leave-active {
+            transition: opacity 0.5s ease;
+        }
+
+        .fade-enter-from, .fade-leave-to {
+            opacity: 0;
+        }
+
+        .fade-enter-to, .fade-leave-from {
+            opacity: 1;
+        }
+    }
+}
+
+/* ---------------------------------------------------------------------------------------------- */
+
+footer {
+    .container {
+        position: fixed;
+        bottom: 0;
+
+        width: 100%;
+
+        margin: 0 0 1rem 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        color: #000;
+
+        p {
+            margin: 0;
+
+            font-size: 0.75rem;
+        }
+
+        a {
+            color: inherit;
+        }
+    }
+}
