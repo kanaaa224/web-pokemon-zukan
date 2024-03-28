@@ -38,7 +38,7 @@ main {
         min-height: 100%;
 
         background-color: #eff3ff;
-        color: #333;
+        color: #000;
 
         p {
             margin: 0;
@@ -72,8 +72,6 @@ main {
                         height: 25rem;
 
                         margin: 2rem;
-
-                        color: #000;
 
                         font-family: 'Poppins', sans-serif;
 
@@ -161,8 +159,45 @@ main {
 
                             p {
                                 margin: 0;
+
                                 color: #404060;
                             }
+                        }
+                    }
+
+                    .container:hover {
+                        opacity: 0.85;
+
+                        cursor: pointer;
+                    }
+
+                    .container:active {
+                        opacity: 0.75;
+
+                        box-shadow: none;
+                    }
+                }
+
+                .detail {
+                    .container {
+                        all: unset;
+
+                        display: inline-block;
+
+                        width: 18rem;
+                        height: 25rem;
+
+                        margin: 2rem;
+
+                        color: #555;
+
+                        font-family: 'Poppins', sans-serif;
+
+                        display: flex;
+                        align-items: center;
+
+                        p {
+                            font-size: 1rem;
                         }
                     }
                 }

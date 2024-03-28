@@ -10,7 +10,7 @@
 
         <meta name="theme-color" content="#333">
 
-        <title>ポケモン グリッド</title>
+        <title>ポケモン図鑑</title>
 
         <link rel="icon" href="./res/icon.png?v=231218">
         <link rel="apple-touch-icon" href="./res/icon.png?v=231218">
@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 
-        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
     </head>
     <body>
         <main>
@@ -38,8 +38,8 @@
                 <transition name="fade">
                     <div v-if="cards_visible" key="cards" class="cards">
                         <div class="container">
-                            <div v-for="card in cards" :key="card.id" class="card">
-                                <div :style="{ background: `radial-gradient(circle at 50% 0%, ${card.typeColor} 36%, #ffffff 36%)` }" class="container">
+                            <div v-for="card in cards" :key="card.id" :class="card.class" @click="openDetail(card.num)">
+                                <div v-if="card.class === 'card'" :style="{ background: `radial-gradient(circle at 50% 0%, ${card.typeColor} 36%, #ffffff 36%)` }" class="container">
                                     <div class="badges">
                                         <div class="badge"><span>No.</span>{{ card.num }}</div>
                                         <div class="badge"><span>HP</span>{{ card.hp }}</div>
@@ -63,6 +63,9 @@
                                             <p>Speed</p>
                                         </div>
                                     </div>
+                                </div>
+                                <div v-else-if="card.class === 'detail'" class="container">
+                                    <p>{{ card.content }}</p>
                                 </div>
                             </div>
                         </div>
